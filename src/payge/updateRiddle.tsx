@@ -8,7 +8,6 @@ function UpdateRiddle() {
         <h1>עדכן חידה קיימת</h1>
         <input type="text"  name={id} placeholder="הכנס מספר חידה שאותה אתה משנה"  onChange={(e) => setId((e.target as HTMLInputElement).value)}/>
         <SendForm url={url} fromRouter="/riddles"  method="put" />
-       
     </>
 }
 export default UpdateRiddle

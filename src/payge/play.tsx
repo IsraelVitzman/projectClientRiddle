@@ -2,6 +2,8 @@ import { useState } from "react"
 import { useFromServer } from "../TS/getFromServer.ts";
 import { CheckAnswer } from "../TS/logikGame.ts";
 import {useTime} from "../TS/timeOfGame.ts";
+import { AddTime } from "../TS/postTime.ts";
+
 
 
 function Play() {
@@ -22,7 +24,12 @@ function Play() {
         return <p>טוען חידות...</p>;
     }
     if (count >= riddles.length) {
-        return <p>{time}סיימת את כל החידות</p>;
+        if (name!==null){
+            console.log(name,"name");
+            AddTime(name ,time)
+            time.length=0
+        }
+        return <p>סיימת את כל החידות</p>;
     }
 
     return (
