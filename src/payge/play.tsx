@@ -17,6 +17,7 @@ function Play() {
     const result = CheckAnswer(answer, riddles[count]);
     setMessage(result.message);
     if (result.message === "תשובה-נכונה") setCount(count + 1);
+    setAnswer("");
   };
 
   if (riddles.length === 0) {
@@ -28,7 +29,7 @@ function Play() {
       time.stop(); 
       AddTime(name, time.totalSeconds); 
     }
-    return <p>סיימת את כל החידות</p>;
+    return <p>👏👏👏👏סיימת את כל החידות👏👏👏👏</p>;
   }
 
   return (
