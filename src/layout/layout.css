@@ -118,3 +118,98 @@ p, label {
     color: rgba(255, 255, 255, 0.9);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
+/* #head */
+#head {
+    height: 25vh; /* הגדלנו מה-15vh ל-25vh */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 195, 255);
+    padding: 10px; /* מרווח פנימי */
+    width: 100%;
+}
+
+/* #main */
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 100vw;
+    height: calc(100vh - 25vh); /* הגובה נשאר כל השאר אחרי ה-head */
+    background: linear-gradient(
+        to bottom,
+        rgb(0, 195, 255),
+        rgb(43, 190, 235),
+        rgb(117, 212, 241),
+        rgb(173, 217, 231)
+    );
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    gap: 20px;
+    overflow: hidden; /* מונע גלילה אנכית */
+}
+
+@media (max-width: 768px) {
+
+    /* main נשאר גריד של עמודה אחת, הגובה משתנה לפי head */
+    #main {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;  
+        align-items: center;    
+        gap: 15px;
+        padding: 10px;
+        height: calc(100vh - auto); /* יותאם לפי #head */
+        overflow: hidden; /* מונע גלילה */
+    }
+
+    /* head מסודר אנכית עם תוכן במרכז */
+    #head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        text-align: center;
+        min-height: 50vh; /* Head יתפוס יותר מקום, מספיק עבור הכפתורים */
+        overflow: hidden; /* מונע גלילה */
+        padding-bottom: 10px;
+    }
+
+    /* התמונה למעלה מעל הטקסט והכפתורים */
+    #head img {
+        max-height: 40%;
+        margin-bottom: 15px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    input, select {
+        width: 90%;
+        font-size: 16px;
+        height: 45px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    button, #btn {
+        width: 80%;
+        height: 50px;
+        font-size: 16px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5rem;
+    }
+
+    p, label {
+        font-size: 16px;
+        text-align: center;
+    }
+}
