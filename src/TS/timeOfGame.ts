@@ -12,7 +12,7 @@ export function useTime() {
     }, [])
    
 
-    return [Math.floor(count / 60),":", count% 60]
+    return [Math.floor(count / 60), count% 60]
 }
 
 

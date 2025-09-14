@@ -9,7 +9,7 @@ function ResultGame(props: { fromRouter: string; url: string }) {
   }
   return (
     <div>
-      {Array.isArray(resultGame) &&resultGame.map((element, index) => (
+      {resultGame.map((element, index) => (
         <p key={index}>
           {element.name}, {element.allTime}
         </p>
