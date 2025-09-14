@@ -1,8 +1,8 @@
-import { useRef } from "react"
+import { useRef ,useState } from "react"
 import { Servics } from "../../apiCLient/services"
 
 function SendForm(props: { method: 'post' | 'put'; fromRouter: string; url: string; }) {
-
+    const [serverMessage, setServerMessage] = useState<string>("")
     const ref = useRef<any>(null)
     const send = async () => {
         if (ref.current.elements !== null) {
@@ -17,8 +17,9 @@ function SendForm(props: { method: 'post' | 'put'; fromRouter: string; url: stri
             const servics = Servics(props.fromRouter)
             console.log(props.url);
             const result=  await servics[props.method](props.url, data)
-            return <p>{result.message}</p>
+            setServerMessage(result.message)
         }
+         ref.current.reset()
     }
     return (<>
         <div className="Riddle">
@@ -30,7 +31,7 @@ function SendForm(props: { method: 'post' | 'put'; fromRouter: string; url: stri
                 <input type="text" name="answer" placeholder="תשובה" />
             </form>
             <button onClick={send}>שלח</button>
-
+            {serverMessage && <p>{serverMessage}</p>}
         </div>
     </>
     )
