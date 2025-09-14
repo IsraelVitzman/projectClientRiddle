@@ -7,7 +7,8 @@ export function DeleteRiddle() {
         if (id.current?.value !== null) {
             const servics = Servics("/riddles")
             const url =`/deleteRiddle/${id.current!.value}`
-            await servics.del(url)
+            const result =await servics.del(url)
+            return <p>{result.message}</p>
         }
     }
     return (<>

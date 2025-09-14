@@ -1,4 +1,4 @@
-/* אפס הכל */
+
 #loginPage * {
   box-sizing: border-box;
   margin: 0;
@@ -6,17 +6,17 @@
   
 }
 
-/* דף רקע */
+
 #loginPage {
   height: 100vh;
   width: 100vw;
   background: linear-gradient(to bottom, #00c3ff, #2bbeeb, #75d4f1, #add9e7);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
-  overflow: hidden; /* מונע גלילה */
+  overflow: hidden; 
 }
 
-/* Header עם כפתורים למעלה בצד ימין */
+
 #loginHeader {
   display: flex;
   justify-content: flex-end;
@@ -40,11 +40,10 @@
 
 #loginTopButtons button:hover {
   background: rgba(0,0,0,0.55);
-  transform: scale(1.05); /* קצת יותר עדין */
+  transform: scale(1.05); 
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
-/* Main מרכזי עם כפתור גדול */
 #loginMain {
   display: flex;
   flex-direction: column;
@@ -53,15 +52,15 @@
   gap: 30px;
   height: 85vh;
   text-align: center;
-  padding: 20px; /* שמירה על מרווחים */
-  overflow: hidden; /* מונע גלילה */
+  padding: 20px; 
+  overflow: hidden; 
 }
 
 #loginMain img {
-  width: 200px; /* הגדלנו את התמונה */
+  width: 200px; 
   height: 200px;
   margin-bottom: 20px;
-  object-fit: contain; /* תמונה תמיד תתאים למימדים */
+  object-fit: contain;
   border-radius: 20px;
 }
 

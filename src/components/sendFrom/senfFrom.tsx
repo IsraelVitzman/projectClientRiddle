@@ -16,8 +16,8 @@ function SendForm(props: { method: 'post' | 'put'; fromRouter: string; url: stri
             
             const servics = Servics(props.fromRouter)
             console.log(props.url);
-            await servics[props.method](props.url, data)
-
+            const result=  await servics[props.method](props.url, data)
+            return <p>{result.message}</p>
         }
     }
     return (<>
